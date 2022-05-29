@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator nestgraphql {
+    provider                = "node node_modules/prisma-nestjs-graphql"
+    output                  = "../../../../shared/generated/db-types/src"
+    purgeOutput                   = false
+    combineScalarFilters          = true
+    emitSingle                    = true
+    noAtomicOperations            = true
+    // field validator
+    fields_Validator_input        = true
+    fields_Validator_output       = true
+    fields_Validator_model        = true
+    fields_Validator_from         = "class-validator"
+    // Args where|data nested validator
+    decorate_1_type               = "*Args"
+    decorate_1_field              = "@(data|where)"
+    decorate_1_name               = ValidateNested
+    decorate_1_from               = "class-validator"
+    decorate_1_arguments          = "['{ each: true }']"
+}
+
+model User {
+    id    Int     @id @default(autoincrement())
+
+    /// @Validator.IsEmail()
+    email String  @unique
+
+    /// @Validator.IsString()
+    /// @Validator.MaxLength(100)
+    /// @Validator.MinLength(3)
+    name  String?
+
+    /// @Validator.IsString()
+    /// @Validator.MaxLength(100)
+    /// @Validator.MinLength(8)
+    /// @HideField()
+    password String
+  }

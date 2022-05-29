@@ -1,0 +1,34 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/generated/db-types/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/generated/db-types",
+        "tsConfig": "libs/shared/generated/db-types/tsconfig.lib.json",
+        "packageJson": "libs/shared/generated/db-types/package.json",
+        "main": "libs/shared/generated/db-types/src/index.ts",
+        "assets": ["libs/shared/generated/db-types/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/generated/db-types/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/generated/db-types"],
+      "options": {
+        "jestConfig": "libs/shared/generated/db-types/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared”"]
+}

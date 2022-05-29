@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  db:
+    image: postgres
+    ports:
+      - '5433:5432'
+    volumes:
+      - full-stack-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      PGDATA: /var/lib/postgresql/data/data
+
+volumes:
+  full-stack-db:
