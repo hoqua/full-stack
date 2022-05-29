@@ -1,6 +1,7 @@
 # Full-Stack Example App
 ## Nx, NestJS(Fastify), GraphQL(Mercurius), Prisma, NestJS, 
-![](tools/readme/Screenshot 2022-05-29 at 11.29.01.png)
+
+![alt text](https://github.com/hoqua/full-stack/blob/part-1-backend/tools/readme/schema.png?raw=true)
 
 ### How to run
 
