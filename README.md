@@ -6,8 +6,24 @@
 ### How to run
 
 - `npm i`
+- Create .local.env
 - `npm db:up`
 - `npm start:dev` -> GQL Playground
+- Create User :
+```
+mutation {
+  createUser(
+    data:{
+      name: "My Name", 
+      email: "test@test.com", 
+      password: "testtest"
+    }){
+      id
+      name
+      email
+  }
+}
+```
 
 ### Core parts and useful tips
 - [Nx](https://nx.dev/getting-started/intro)
