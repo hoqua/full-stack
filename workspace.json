@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "api": "apps/api"
+    "api": "apps/api",
+    "api-data-access-db": "libs/api/data-access-db",
+    "shared-generated-db-types": "libs/shared/generated/db-types"
   }
 }

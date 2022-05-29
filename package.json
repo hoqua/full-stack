@@ -3,15 +3,29 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "start:dev": "nx serve api",
+    "DATABASE": "-----------------------------------------------------------------------------------------------",
+    "db:up": "npm run db:docker && npm run db:dev-migrate && npm run db:create-client -- --watch",
+    "db:docker": "docker-compose -f tools/docker-env/dev.docker-compose.yml up -d --no-recreate --remove-orphans",
+    "db:create-client": "prisma generate",
+    "db:dev-migrate": "env-cmd --no-override -f .local.env npx prisma migrate dev"
+  },
+  "prisma": {
+    "schema": "libs/api/data-access-db/src/lib/schema.prisma"
   },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/graphql": "^10.0.13",
+    "@nestjs/mercurius": "^10.0.13",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/platform-fastify": "^8.4.5",
+    "@prisma/client": "^3.14.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "graphql": "^16.5.0",
+    "mercurius": "^9.6.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.3.0"
@@ -30,11 +44,14 @@
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.18.0",
     "@typescript-eslint/parser": "~5.18.0",
+    "env-cmd": "^10.1.0",
     "eslint": "~8.12.0",
     "eslint-config-prettier": "8.1.0",
     "jest": "27.5.1",
     "nx": "14.1.9",
     "prettier": "^2.5.1",
+    "prisma": "^3.14.0",
+    "prisma-nestjs-graphql": "^16.0.1",
     "ts-jest": "27.1.4",
     "ts-node": "9.1.1",
     "typescript": "~4.6.2"
