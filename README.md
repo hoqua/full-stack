@@ -3,13 +3,13 @@
 
 ![alt text](https://github.com/hoqua/full-stack/blob/part-1-backend/tools/readme/schema.png?raw=true)
 
-### How to run
-
+### How to run:
+- Install docker and nx globally
 - `npm i`
-- Create .local.env
+- Create `.local.env` from `.env`
 - `npm db:up`
-- `npm start:dev` -> GQL Playground
-- Create User :
+- `npm start:dev` 
+- Go to GQL Playground. Create User :
 ```
 mutation {
   createUser(
@@ -40,3 +40,10 @@ mutation {
   - Add docker compose.yml to spin up database
   - **!** Check out `prisma-nestjs-graphql` docs if types/validation support needed
   - **!** Create `.local.env` with needed variables
+- [NextJS](https://nextjs.org/docs/getting-started)
+  - Add next package `npm install --save-dev @nrwl/next`
+  - Create next app `nx g @nrwl/next:app web`
+  - Turn on `swcMinify: true` to make build faster
+- [GraphQL Code Generator](https://www.graphql-code-generator.com/docs/getting-started)
+  - Add needed packages `npm i -D graphql-codegen @graphql-codegen/cli @graphql-codegen/near-operation-file-preset @graphql-codegen/typed-document-node @graphql-codegen/typescript-operations @graphql-codegen/typescript @graphql-codegen/typescript-urql`
+  - Run generate if config in place `"gen:gql": "graphql-codegen --config tools/gql-codegen/gql-codegen.yml --watch"`
