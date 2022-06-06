@@ -18,8 +18,14 @@
       "@full-stack/api/data-access-db": [
         "libs/api/data-access-db/src/index.ts"
       ],
-      "@full-stack/shared/generated/db-types": [
-        "libs/shared/generated/db-types/src/index.ts"
+      "@full-stack/api/generated/db-types": [
+        "libs/api/generated/db-types/src/index.ts"
+      ],
+      "@full-stack/client/data-access/graphql-types": [
+        "libs/client/data-access/graphql-types/src/index.ts"
+      ],
+      "@full-stack/client/generated/graphql-types": [
+        "libs/client/generated/graphql-types/src/index.ts"
       ]
     }
   },

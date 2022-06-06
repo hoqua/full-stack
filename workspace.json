@@ -4,6 +4,9 @@
   "projects": {
     "api": "apps/api",
     "api-data-access-db": "libs/api/data-access-db",
-    "shared-generated-db-types": "libs/shared/generated/db-types"
+    "api-generated-db-types": "libs/api/generated/db-types",
+    "client-generated-graphql-types": "libs/client/generated/graphql-types",
+    "web": "apps/web",
+    "web-e2e": "apps/web-e2e"
   }
 }

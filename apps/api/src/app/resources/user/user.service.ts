@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { DbService } from "@full-stack/api/data-access-db";
-import { CreateOneUserArgs, FindUniqueUserArgs, UpdateOneUserArgs } from "@full-stack/shared/generated/db-types";
+import {CreateOneUserArgs, FindUniqueUserArgs, UpdateOneUserArgs} from "@full-stack/api/generated/db-types";
 
 @Injectable()
 export class UserService {
