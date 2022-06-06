@@ -7,7 +7,6 @@
 - Install docker and nx globally
 - `npm i`
 - Create `.local.env` from `.env`
-- `npm db:up`
 - `npm start:dev` 
 - Go to GQL Playground. Create User :
 ```
