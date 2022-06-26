@@ -10,7 +10,7 @@
     "db:up": "npm run db:docker && npm run db:dev-migrate && npm run db:create-client -- --watch",
     "db:docker": "docker-compose -f tools/docker-env/dev.docker-compose.yml up -d --no-recreate --remove-orphans",
     "db:create-client": "prisma generate",
-    "db:dev-migrate": "env-cmd --no-overridWelcome webe -f .local.env npx prisma migrate dev",
+    "db:dev-migrate": "env-cmd --no-override -f .local.env npx prisma migrate dev",
     "db:studio": "env-cmd --no-override -f .local.env npx prisma studio",
     "UTILS": "---------------------------------------------------------------------------------------------------",
     "gen:gql": "graphql-codegen --config tools/gql-codegen/gql-codegen.yml --watch"
