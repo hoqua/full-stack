@@ -18,3 +18,4 @@ generates:
       - typescript-urql
     config:
       withHooks: true
+      gqlImport: 'urql#gql'
