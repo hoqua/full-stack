@@ -11,15 +11,11 @@
 - Go to GQL Playground. Create User :
 ```
 mutation {
-  createUser(
-    data:{
-      name: "My Name", 
-      email: "test@test.com", 
-      password: "testtest"
-    }){
-      id
-      name
-      email
+  signUp(signUpInput:{
+    email: "youtube-test@test.com", 
+    password:"testtest"
+  }){
+    id
   }
 }
 ```
