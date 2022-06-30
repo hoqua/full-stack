@@ -1,11 +1,11 @@
-import styles from './index.module.css';
-import { useGetUserQuery } from '../api/user/user.gql.gen';
-import { withApi } from '../api/api-provider';
+import styles from './index.module.css'
+import { useGetUserQuery } from '../api/user/user.gql.gen'
+import { withApi } from '../api/client-api'
 
 export function Index() {
   const [{ data, fetching }] = useGetUserQuery({
-    variables: { args: { id: 1 } },
-  });
+    variables: { args: { id: 1 } }
+  })
 
   return (
     <div className={styles.page}>
@@ -13,7 +13,7 @@ export function Index() {
         <div className="container">
           <div id="welcome">
             <h1>
-              <span> Hello { fetching ? 'there' : data?.user?.name }, </span>
+              <span> Hello {fetching ? 'there' : data?.user?.name}, </span>
               Welcome to Full-Stack web 👋
             </h1>
           </div>
@@ -261,11 +261,7 @@ export function Index() {
               </a>
               <div id="nx-cloud" className="rounded shadow">
                 <div>
-                  <svg
-                    viewBox="0 0 120 120"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M120 15V30C103.44 30 90 43.44 90 60C90 76.56 76.56 90 60 90C43.44 90 30 103.44 30 120H15C6.72 120 0 113.28 0 105V15C0 6.72 6.72 0 15 0H105C113.28 0 120 6.72 120 15Z"
                       fill="#0E2039"
@@ -280,16 +276,9 @@ export function Index() {
                     <span>Enable faster CI & better DX</span>
                   </h2>
                 </div>
-                <p>
-                  You can activate distributed tasks executions and caching by
-                  running:
-                </p>
+                <p>You can activate distributed tasks executions and caching by running:</p>
                 <pre>nx connect-to-nx-cloud</pre>
-                <a
-                  href="https://nx.app/?utm_source=nx-project"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://nx.app/?utm_source=nx-project" target="_blank" rel="noreferrer">
                   {' '}
                   What is Nx Cloud?{' '}
                 </a>
@@ -410,7 +399,7 @@ export function Index() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default withApi(Index);
+export default withApi(Index)
