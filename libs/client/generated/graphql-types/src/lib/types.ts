@@ -12,10 +12,17 @@ export type Scalars = {
   Float: number;
 };
 
+export type LoginInput = {
+  email: Scalars['String'];
+  password: Scalars['String'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   createUser: User;
+  login: User;
   removeUser: User;
+  signUp: User;
   updateUser: User;
 };
 
@@ -25,8 +32,18 @@ export type MutationCreateUserArgs = {
 };
 
 
+export type MutationLoginArgs = {
+  loginInput: LoginInput;
+};
+
+
 export type MutationRemoveUserArgs = {
   where: UserWhereUniqueInput;
+};
+
+
+export type MutationSignUpArgs = {
+  signUpInput: LoginInput;
 };
 
 
